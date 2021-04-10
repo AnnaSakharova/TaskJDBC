@@ -7,6 +7,8 @@ import org.junit.Test;
 import java.util.List;
 
 public class UserServiceTest {
+    //  Service на этот раз использует реализацию dao через Hibernate
+
     private final UserService userService = new UserServiceImpl();
 
     private final String testName = "Ivan";

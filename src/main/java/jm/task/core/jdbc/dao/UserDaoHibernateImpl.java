@@ -5,10 +5,11 @@ import jm.task.core.jdbc.model.User;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
+    // Методы создания и удаления таблицы пользователей в классе UserHibernateDaoImpl
+    // должны быть реализованы с помощью SQL.
     public UserDaoHibernateImpl() {
 
     }
-
 
     @Override
     public void createUsersTable() {
