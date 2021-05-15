@@ -16,12 +16,13 @@ public class Util {
 
     public static Connection connection;
 
-    static {
+    public static Connection getConnection() {
+        Connection connection = null;
         try {
-            DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        return connection;
     }
 }
