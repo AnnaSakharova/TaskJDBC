@@ -17,7 +17,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void createUsersTable() {
-        String CREATE_TABLE = "CREATE TABLE users(" +
+        String CREATE_TABLE = "CREATE TABLE Userz(" +
                 "id BIGINT AUTO_INCREMENT PRIMARY KEY," +
                 "name VARCHAR(255) NOT NULL," +
                 "lastName VARCHAR(255) NOT NULL," +
@@ -30,7 +30,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void dropUsersTable() {
-        String DROP_TABLE = "DROP TABLE IF EXISTS users";
+        String DROP_TABLE = "DROP TABLE IF EXISTS Userz";
         try (PreparedStatement preparedStatement = Util.getConnection().prepareStatement(DROP_TABLE)) {
             preparedStatement.execute();
         } catch (SQLException throwables) {
