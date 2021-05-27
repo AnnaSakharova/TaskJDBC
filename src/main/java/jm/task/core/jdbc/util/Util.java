@@ -14,15 +14,23 @@ public class Util {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "TestJDBC";
 
-    public static Connection connection;
+    Connection connection;
 
-    public static Connection getConnection() {
-        Connection connection = null;
+    public Util() {
         try {
-            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-        } catch (SQLException e) {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
+        try {
+            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public Connection getConnection() {
         return connection;
     }
 }
