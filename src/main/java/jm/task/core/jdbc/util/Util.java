@@ -16,6 +16,7 @@ public class Util {
 
     Connection connection;
 
+
     public Util() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -30,7 +31,7 @@ public class Util {
         }
     }
 
-    public Connection getConnection() {
-        return connection;
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
 }
